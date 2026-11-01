@@ -1,0 +1,3 @@
+# Real pages stay local until their final text has had the business thread's read.
+real/
+.DS_Store

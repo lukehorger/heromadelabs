@@ -1,0 +1,22 @@
+/* heromadelabs.com: one quiet column on the family's near-black, with the Labs silver accent. */
+:root { --bg: #020617; --fg: #e5e9f0; --muted: #94a3b8; --line: #1e293b; --accent: #e2e8f0; --link: #cbd5e1; }
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif; }
+main { max-width: 42rem; margin: 0 auto; padding: 48px max(20px, env(safe-area-inset-right, 0px)) 64px max(20px, env(safe-area-inset-left, 0px)); }
+a { color: var(--link); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.brand { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; text-decoration: none; color: var(--fg); }
+.brand img { width: 52px; height: 52px; border-radius: 12px; }
+.brand span { font-weight: 800; letter-spacing: .06em; text-transform: uppercase; font-size: .95rem; }
+h1 { font-size: clamp(1.7rem, 5vw, 2.3rem); line-height: 1.15; margin: 0 0 12px; text-wrap: balance; }
+h2 { font-size: 1.2rem; margin: 32px 0 8px; }
+h3 { font-size: 1.02rem; margin: 22px 0 6px; }
+p, ul, ol { margin: 0 0 14px; }
+li { margin-bottom: 6px; }
+.lede { color: var(--muted); font-size: 1.1rem; }
+.meta { color: var(--muted); font-size: .9rem; }
+.apps { list-style: none; padding: 0; display: grid; gap: 12px; margin: 24px 0; }
+.apps li { border: 1px solid var(--line); border-radius: 12px; padding: 14px 16px; }
+.apps b { display: block; }
+footer { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; display: flex; flex-wrap: wrap; gap: 6px 18px; }
