@@ -54,6 +54,15 @@
   .card p { margin: 0; color: var(--muted); font-size: 16px; }
   .num { color: var(--gold); font-weight: 800; margin-right: 6px; }
 
+  .flow { display: grid; gap: 22px; }
+  .flow-row { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: center; background: var(--panel); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
+  .flow-row.wide { grid-template-columns: 1fr 1.6fr; }
+  .flow-text h3 { margin: 0 0 8px; font-size: 22px; line-height: 1.25; }
+  .flow-text p { margin: 0; color: var(--muted); }
+  .flow img { width: 100%; height: auto; display: block; border-radius: 14px; }
+  .flow img.phone { max-width: 260px; max-height: 460px; object-fit: cover; object-position: top; justify-self: center; border: 1px solid #2c3858; border-radius: 22px; }
+  .flow img.story { max-width: 340px; aspect-ratio: 4 / 5; object-fit: cover; justify-self: center; }
+  .pair { display: grid; gap: 12px; }
   .facts { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
   .facts li { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
   .facts b { display: block; font-size: 17px; margin-bottom: 2px; }
@@ -93,7 +102,7 @@
     .hero .wrap { display: flex; flex-direction: column-reverse; gap: 26px; padding-top: 76px; padding-bottom: 44px; }
     .hero-shot { border-radius: 16px; }
     .pill { display: none; }
-    .steps { grid-template-columns: 1fr; }
+    .flow-row, .flow-row.wide { grid-template-columns: 1fr; gap: 18px; padding: 18px; }
     .card { display: grid; grid-template-columns: 112px 1fr; gap: 14px; align-items: center; padding: 14px; }
     .card img { margin: 0; aspect-ratio: 1 / 1; }
     .facts { grid-template-columns: 1fr; }
@@ -125,7 +134,7 @@
       </div>
       <picture>
         <source media="(max-width: 760px)" srcset="img/hero-lift-tall.jpg">
-        <img class="hero-shot" src="img/hero-lift-wide.jpg" alt="A person presses a barbell in a gym at sunrise; a gold thread of light carries the lift into their hero's overhead strike, which shatters an evil Hollow.">
+        <img class="hero-shot" src="img/hero-lift-wide.jpg" alt="A person presses a barbell overhead in a gym at dawn; a gold thread of light runs from the bar to their hero in a painted world, whose overhead strike cracks the glass face of a clawed, shadowy Hollow.">
       </picture>
     </div>
   </div>
@@ -134,18 +143,21 @@
     <div class="wrap">
       <h2>How it works</h2>
       <p class="lead">You live your week. Your hero lives it too.</p>
-      <div class="steps">
-        <div class="card">
-          <img src="img/battle-wide.jpg" alt="A hero and a pup face a Stonehide Troll at an old river ford." loading="lazy" style="object-position: 60% center">
-          <div><h3><span class="num">1</span>Do your habits</h3><p>The workout, the reading, the meditation. Whatever you're leveling up in real life.</p></div>
+      <div class="flow">
+        <div class="flow-row">
+          <div class="flow-text"><h3><span class="num">1</span>Do your habits</h3><p>The workout, the reading, the meditation. Check off what you did today, in whatever areas of life you're leveling up.</p></div>
+          <img class="phone" src="img/ui-checkin.jpg" width="700" height="1515" alt="The app's habit check-in screen with Workout and Read checked off and Study still to do." loading="lazy">
         </div>
-        <div class="card">
-          <img src="img/story-ram.jpg" alt="A masked ram charges down a road." loading="lazy">
-          <div><h3><span class="num">2</span>Your hero fights</h3><p>Every habit you keep becomes a strike in your hero's battles.</p></div>
+        <div class="flow-row wide">
+          <div class="flow-text"><h3><span class="num">2</span>Your hero fights</h3><p>Every habit you keep becomes a blow in your hero's battle. Your workout is a Warrior's strike. Your reading is a Wizard's spell.</p></div>
+          <div class="pair">
+            <img src="img/warrior-workout.jpg" width="1200" height="644" alt="In the game, a Warrior's strike labeled WORKOUT hits a masked ram." loading="lazy">
+            <img src="img/wizard-read.jpg" width="1200" height="644" alt="In the game, a Wizard's frost bolt labeled READ hits a masked ram." loading="lazy">
+          </div>
         </div>
-        <div class="card">
-          <img src="img/story-road.jpg" alt="A long road through a fantasy land at dusk." loading="lazy">
-          <div><h3><span class="num">3</span>Your story grows</h3><p>Each week, the app can write you a new chapter of the story, with pictures, based on how your real week went.</p></div>
+        <div class="flow-row">
+          <div class="flow-text"><h3><span class="num">3</span>Your story grows</h3><p>Each week, the app can write you a new chapter of the story, with pictures, based on how your real week went.</p></div>
+          <img class="story" src="img/story-road.jpg" alt="A long road through a fantasy land at dusk, where the story begins." loading="lazy">
         </div>
       </div>
     </div>
