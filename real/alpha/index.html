@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hero Made Real: Founding Alpha Testers</title>
+<meta name="description" content="Be one of about 30 founding testers for Hero Made Real, a habit RPG for adults. iPhone or Android, aimed at January 2027.">
+<link rel="icon" href="/assets/labs-256.png">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+  .shot { margin: 8px 0 22px; }
+  .shot img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--line); }
+  .shot figcaption { color: var(--muted); font-size: .9rem; margin-top: 8px; }
+  form.signup { border: 1px solid var(--line); border-radius: 14px; padding: 18px 16px 20px; margin: 8px 0 24px; scroll-margin-top: 24px; }
+  .field { margin: 0 0 16px; }
+  .field > label, fieldset legend { display: block; font-weight: 700; margin-bottom: 6px; }
+  .hint { color: var(--muted); font-size: .9rem; font-weight: 400; }
+  input[type=email], input[type=text] { width: 100%; font: inherit; color: var(--fg); background: #0b1224; border: 1px solid #334155; border-radius: 10px; padding: 12px 12px; }
+  input[type=email]:focus, input[type=text]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  fieldset { border: 0; padding: 0; margin: 0 0 16px; }
+  .choices { display: flex; gap: 10px; flex-wrap: wrap; }
+  .choice { flex: 1 1 140px; display: flex; align-items: center; gap: 10px; border: 1px solid #334155; border-radius: 10px; padding: 12px; cursor: pointer; }
+  .check { display: flex; align-items: flex-start; gap: 10px; margin: 0 0 12px; cursor: pointer; }
+  .check input, .choice input { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--accent); flex: none; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  button { width: 100%; font: inherit; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--bg); background: var(--accent); border: 0; border-radius: 12px; padding: 15px 16px; cursor: pointer; margin-top: 6px; }
+  button:disabled { opacity: .6; cursor: wait; }
+  .msg { margin-top: 12px; font-size: .95rem; }
+  .msg.err { color: #fca5a5; }
+  .done { border: 1px solid #166534; background: #052e16; color: #dcfce7; border-radius: 14px; padding: 18px 16px; margin: 8px 0 24px; scroll-margin-top: 24px; }
+  .done strong { display: block; font-size: 1.15rem; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<main class="doc">
+  <a class="brand" href="/"><img src="/assets/labs.svg" alt=""><span>Hero Made Labs</span></a>
+  <h1>Be a founding tester for Hero Made Real</h1>
+  <p class="lede">Hero Made Real is a habit RPG for adults. Your real-life habits (training, study, focus, anything you're working on) power your hero's fight, and each week a new chapter of the story arrives as a letter about your week.</p>
+
+  <figure class="shot">
+    <img src="/assets/real-alpha-old-ford.jpg" width="1200" height="555" alt="A hero and a pup face a Stonehide Troll at an old river ford, in-game.">
+    <figcaption>Your hero and pup stand their ground against a Stonehide Troll at the old ford (in-game).</figcaption>
+  </figure>
+
+  <h2>The test</h2>
+  <ul>
+    <li><strong>About 30 founding testers.</strong> It's the very first version, so expect rough edges.</li>
+    <li><strong>Aimed at January 2027.</strong> We'll email you when your invite is ready.</li>
+    <li><strong>iPhone</strong> (through Apple's TestFlight) <strong>or Android</strong> (a Google Play test). Free while you test.</li>
+    <li>You play it in your real week, then tell us what's fun, what's confusing and what breaks.</li>
+  </ul>
+
+  <h2>Who can join</h2>
+  <ul>
+    <li>You're <strong>18 or older</strong>. Why? Not because of anything mature in the game. Your weekly letter is written and illustrated with AI, and those AI services and the privacy laws for younger users mean we start with adults.</li>
+    <li>You <strong>don't live in Washington or Nevada</strong> during the test, because of those states' health-data laws.</li>
+  </ul>
+
+  <form class="signup" id="signup" novalidate>
+    <div class="field">
+      <label for="email">Your email <span class="hint">(for your invite)</span></label>
+      <input id="email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="200" required>
+    </div>
+    <fieldset>
+      <legend>Your phone</legend>
+      <div class="choices">
+        <label class="choice"><input type="radio" name="device" value="iPhone" required> iPhone</label>
+        <label class="choice"><input type="radio" name="device" value="Android"> Android</label>
+      </div>
+    </fieldset>
+    <label class="check"><input type="checkbox" name="adult" value="yes" required> <span>I'm 18 or older.</span></label>
+    <label class="check"><input type="checkbox" name="state" value="yes" required> <span>I don't live in Washington or Nevada.</span></label>
+    <div class="field" style="margin-top:14px">
+      <label for="handle">Discord name <span class="hint">(optional, so Luke knows who you are)</span></label>
+      <input id="handle" name="handle" type="text" maxlength="60" autocomplete="off">
+    </div>
+    <div class="hp" aria-hidden="true"><label>Leave empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+    <button type="submit" id="send">Count me in</button>
+    <p class="msg" id="msg" role="status" aria-live="polite"></p>
+  </form>
+
+  <h2>What we do with your answers</h2>
+  <p>We use your email only to send your tester invite and news about the test. We don't sell or share it, and there are no ads. Want off the list? Email <a href="mailto:real@heromadelabs.com">real@heromadelabs.com</a> and we'll delete it. More in our <a href="/real/privacy">privacy policy</a>.</p>
+  <p class="meta">Hero Made Real is an independent app by Hero Made Labs (Luke Horger). It isn't connected to or endorsed by any other organization.</p>
+
+  <footer><a href="/">Hero Made Labs</a><a href="/real/support">Real support</a><a href="/real/privacy">Real privacy</a><a href="/real/terms">Real terms</a></footer>
+</main>
+<script>
+(function () {
+  // Set to the Apps Script web app URL after Luke deploys it (site/drafts/real-alpha-signup-steps.md).
+  var ENDPOINT = "https://script.google.com/macros/s/AKfycbxxy-YnBTpzQmFVnXXeDS74-wv6Cw_K1r2LDIna5TyP2qIZPCT2AfkMNe4zVRfI7ucT/exec";
+  var form = document.getElementById("signup");
+  var btn = document.getElementById("send");
+  var msg = document.getElementById("msg");
+  var ref = (new URLSearchParams(location.search).get("ref") || "direct").replace(/[^a-z0-9_-]/gi, "").slice(0, 40) || "direct";
+
+  function fail(text, el) {
+    msg.className = "msg err";
+    msg.textContent = text;
+    if (el) el.focus();
+    msg.scrollIntoView({ block: "center", behavior: "smooth" });
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (btn.disabled) return;
+    var email = form.email.value.trim();
+    var device = form.querySelector("input[name=device]:checked");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return fail("Please enter a valid email.", form.email);
+    if (!device) return fail("Please pick iPhone or Android.");
+    if (!form.adult.checked) return fail("The test is for adults 18 and older.", form.adult);
+    if (!form.state.checked) return fail("Sorry, testers can't live in Washington or Nevada during this test.", form.state);
+
+    var body = new URLSearchParams({
+      email: email, device: device.value, adult: "yes", state: "yes",
+      handle: form.handle.value.trim().slice(0, 60), ref: ref, website: form.website.value
+    });
+    btn.disabled = true;
+    btn.textContent = "Sending…";
+    msg.className = "msg";
+    msg.textContent = "";
+
+    fetch(ENDPOINT, { method: "POST", body: body })
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (!d || !d.ok) throw new Error((d && d.error) || "error");
+        var box = document.createElement("div");
+        box.className = "done";
+        box.setAttribute("role", "status");
+        box.setAttribute("tabindex", "-1");
+        box.innerHTML = "<strong>You're on the list. Welcome, hero.</strong>" +
+          (d.already ? "You were already signed up, so no need to do it again." : "We'll email you when your invite is ready. No need to sign up again.");
+        form.replaceWith(box);
+        if (document.activeElement) document.activeElement.blur();
+        box.scrollIntoView({ block: "center", behavior: "smooth" });
+        box.focus({ preventScroll: true });
+      })
+      .catch(function () {
+        btn.disabled = false;
+        btn.textContent = "Count me in";
+        fail("That didn't go through. Please try again, or email real@heromadelabs.com.");
+      });
+  });
+})();
+</script>
+</body>
+</html>
