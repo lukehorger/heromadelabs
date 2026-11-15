@@ -3,91 +3,208 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Hero Made Real: Founding Alpha Testers</title>
-<meta name="description" content="Be one of about 30 founding testers for Hero Made Real, a habit RPG for adults. iPhone or Android, aimed at January 2027.">
+<title>Hero Made Real: Founding Testers</title>
+<meta name="description" content="Games are fun. Training your body and mind can be hard. Hero Made Real makes your real-life habits power your hero. Be one of about 30 founding testers.">
+<meta property="og:title" content="Hero Made Real: founding testers wanted">
+<meta property="og:description" content="Your real-life habits power your hero's fight. iPhone or Android, aimed at January 2027.">
+<meta property="og:image" content="https://heromadelabs.com/real/alpha/img/battle-wide.jpg">
+<meta name="theme-color" content="#020617">
 <link rel="icon" href="/assets/labs-256.png">
-<link rel="stylesheet" href="/assets/site.css">
 <style>
-  .shot { margin: 8px 0 22px; }
-  .shot img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--line); }
-  .shot figcaption { color: var(--muted); font-size: .9rem; margin-top: 8px; }
-  form.signup { border: 1px solid var(--line); border-radius: 14px; padding: 18px 16px 20px; margin: 8px 0 24px; scroll-margin-top: 24px; }
+  :root {
+    --bg: #020617; --panel: #0b1022; --panel2: #0f1630; --line: #1f2a44;
+    --gold: #f59e0b; --gold-soft: #fcd34d; --text: #eef2f8; --muted: #a3afc4;
+  }
+  * { box-sizing: border-box; }
+  @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Inter, system-ui, sans-serif; }
+  a { color: var(--gold-soft); text-underline-offset: 3px; }
+  :focus-visible { outline: 3px solid var(--gold-soft); outline-offset: 3px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 max(20px, env(safe-area-inset-left, 0px)); }
+
+  header { position: absolute; inset: 0 0 auto 0; z-index: 3; }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 18px; }
+  .mark { display: flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; }
+  .mark svg { width: 38px; height: 38px; border-radius: 9px; }
+  .wordmark { font-weight: 800; letter-spacing: .1em; font-size: 14px; }
+  .wordmark span { color: var(--gold); }
+  .pill { font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--gold-soft); border: 1px solid rgba(245,158,11,.45); border-radius: 999px; padding: 6px 12px; background: rgba(2,6,23,.55); }
+
+  .hero { position: relative; min-height: 86vh; display: flex; align-items: center; background: radial-gradient(60% 70% at 75% 50%, rgba(245,158,11,.14), transparent 70%); }
+  .hero .wrap { position: relative; width: 100%; padding-top: 110px; padding-bottom: 64px; display: grid; grid-template-columns: 1fr 1.1fr; gap: 44px; align-items: center; }
+  .hero-copy { max-width: 560px; }
+  .hero-shot { width: 100%; height: auto; display: block; border-radius: 20px; border: 1px solid rgba(245,158,11,.35); box-shadow: 0 0 60px rgba(245,158,11,.18), 0 20px 50px rgba(0,0,0,.5); }
+  .kicker { color: var(--gold-soft); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; font-size: 13px; margin: 0 0 12px; }
+  h1 { font-size: clamp(38px, 7vw, 64px); line-height: 1.04; margin: 0 0 18px; font-weight: 800; letter-spacing: -.01em; text-wrap: balance; }
+  h1 em { font-style: normal; color: var(--gold); text-shadow: 0 0 28px rgba(245,158,11,.55); }
+  .sub { font-size: 19px; color: #cdd5e3; margin: 0 0 26px; max-width: 540px; }
+  .btn { display: inline-block; background: var(--gold); color: #1a1003; font: inherit; font-weight: 800; line-height: 1.2; text-decoration: none; padding: 15px 28px; border-radius: 999px; border: 0; cursor: pointer; box-shadow: 0 0 26px rgba(245,158,11,.5); }
+  .btn:hover { background: #fbbf24; }
+  .small { margin-top: 16px; font-size: 14px; color: var(--muted); }
+
+  section { padding: 72px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: clamp(26px, 4.4vw, 38px); line-height: 1.15; margin: 0 0 12px; text-wrap: balance; }
+  .lead { color: var(--muted); max-width: 640px; margin: 0 0 34px; }
+
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 18px; }
+  .card img { width: 100%; display: block; border-radius: 12px; margin-bottom: 14px; aspect-ratio: 4 / 5; object-fit: cover; background: var(--panel2); }
+  .card h3 { margin: 0 0 6px; font-size: 20px; line-height: 1.25; }
+  .card p { margin: 0; color: var(--muted); font-size: 16px; }
+  .num { color: var(--gold); font-weight: 800; margin-right: 6px; }
+
+  .facts { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .facts li { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+  .facts b { display: block; font-size: 17px; margin-bottom: 2px; }
+  .facts span { color: var(--muted); font-size: 15.5px; }
+  .why { color: var(--muted); font-size: 15px; margin: 18px 0 0; max-width: 720px; }
+
+  .join { display: grid; grid-template-columns: 1fr 1fr; grid-template-areas: "head form" "priv form"; gap: 0 40px; align-items: start; }
+  .jhead { grid-area: head; } form.signup, .done { grid-area: form; } .privacy { grid-area: priv; }
+  form.signup, .done { background: var(--panel); border: 1px solid rgba(245,158,11,.35); border-radius: 20px; padding: 22px 20px; box-shadow: 0 0 40px rgba(245,158,11,.08); scroll-margin-top: 24px; }
   .field { margin: 0 0 16px; }
   .field > label, fieldset legend { display: block; font-weight: 700; margin-bottom: 6px; }
-  .hint { color: var(--muted); font-size: .9rem; font-weight: 400; }
-  input[type=email], input[type=text] { width: 100%; font: inherit; color: var(--fg); background: #0b1224; border: 1px solid #334155; border-radius: 10px; padding: 12px 12px; }
-  input[type=email]:focus, input[type=text]:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .hint { color: var(--muted); font-size: 14px; font-weight: 400; }
+  input[type=email], input[type=text] { width: 100%; font: inherit; color: var(--text); background: #060b1c; border: 1px solid #2c3858; border-radius: 12px; padding: 13px 14px; }
+  input[type=email]:focus, input[type=text]:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
   fieldset { border: 0; padding: 0; margin: 0 0 16px; }
-  .choices { display: flex; gap: 10px; flex-wrap: wrap; }
-  .choice { flex: 1 1 140px; display: flex; align-items: center; gap: 10px; border: 1px solid #334155; border-radius: 10px; padding: 12px; cursor: pointer; }
+  .choices { display: flex; gap: 10px; }
+  .choice { flex: 1; display: flex; align-items: center; gap: 10px; border: 1px solid #2c3858; border-radius: 12px; padding: 13px 14px; cursor: pointer; background: #060b1c; }
+  .choice:has(input:checked) { border-color: var(--gold); box-shadow: 0 0 0 1px var(--gold) inset; }
   .check { display: flex; align-items: flex-start; gap: 10px; margin: 0 0 12px; cursor: pointer; }
-  .check input, .choice input { width: 20px; height: 20px; margin: 2px 0 0; accent-color: var(--accent); flex: none; }
+  .check input, .choice input { width: 20px; height: 20px; margin: 3px 0 0; accent-color: var(--gold); flex: none; }
   .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
-  button { width: 100%; font: inherit; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--bg); background: var(--accent); border: 0; border-radius: 12px; padding: 15px 16px; cursor: pointer; margin-top: 6px; }
-  button:disabled { opacity: .6; cursor: wait; }
-  .msg { margin-top: 12px; font-size: .95rem; }
+  form .btn { width: 100%; margin-top: 8px; font-size: 17px; }
+  .btn:disabled { opacity: .6; cursor: wait; }
+  .msg { margin: 12px 0 0; font-size: 15px; }
   .msg.err { color: #fca5a5; }
-  .done { border: 1px solid #166534; background: #052e16; color: #dcfce7; border-radius: 14px; padding: 18px 16px; margin: 8px 0 24px; scroll-margin-top: 24px; }
-  .done strong { display: block; font-size: 1.15rem; margin-bottom: 4px; }
+  .done { border-color: #16a34a; background: #052e16; color: #dcfce7; }
+  .done strong { display: block; font-size: 20px; margin-bottom: 4px; }
+  .privacy { color: var(--muted); font-size: 15px; }
+  .privacy p { margin: 0 0 12px; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 44px; color: var(--muted); font-size: 14px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+  footer a { color: var(--muted); }
+
+  @media (max-width: 760px) {
+    .hero { min-height: 0; display: block; background: url(img/battle-wide.jpg) 46% 0 / auto 52vh no-repeat var(--bg); }
+    .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(2,6,23,.5) 0, rgba(2,6,23,0) 14vh, rgba(2,6,23,0) 34vh, var(--bg) 52vh); }
+    .hero .wrap { display: block; padding-top: 44vh; padding-bottom: 44px; }
+    .hero-shot { display: none; }
+    .pill { display: none; }
+    .steps { grid-template-columns: 1fr; }
+    .card { display: grid; grid-template-columns: 112px 1fr; gap: 14px; align-items: center; padding: 14px; }
+    .card img { margin: 0; aspect-ratio: 1 / 1; }
+    .facts { grid-template-columns: 1fr; }
+    .join { grid-template-columns: 1fr; grid-template-areas: "head" "form" "priv"; gap: 0; } .privacy { margin-top: 24px; }
+    section { padding: 56px 0; }
+  }
 </style>
 </head>
 <body>
-<main class="doc">
-  <a class="brand" href="/"><img src="/assets/labs.svg" alt=""><span>Hero Made Labs</span></a>
-  <h1>Be a founding tester for Hero Made Real</h1>
-  <p class="lede">Hero Made Real is a habit RPG for adults. Your real-life habits (training, study, focus, anything you're working on) power your hero's fight. And each week, the app can write you a new chapter of the story, with pictures, based on how your real week went.</p>
+<header>
+  <div class="wrap">
+    <a class="mark" href="/" aria-label="Hero Made Labs home">
+      <svg viewBox="0 0 1024 1024" aria-hidden="true"><defs><linearGradient id="door" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f59e0b"/><stop offset="1" stop-color="#f59e0b" stop-opacity=".45"/></linearGradient></defs><rect width="1024" height="1024" fill="#020617"/><path d="M340,820 L340,420 A172,172 0 0 1 684,420 L684,820 Z" fill="url(#door)"/><polygon points="512,318 544,362 544,628 480,628 480,362" fill="#020617"/><rect x="420" y="628" width="184" height="32" fill="#020617"/><rect x="496" y="660" width="32" height="76" fill="#020617"/><circle cx="512" cy="756" r="22" fill="#020617"/><path d="M282,820 L282,420 A230,230 0 0 1 742,420 L742,820" fill="none" stroke="#f59e0b" stroke-width="46"/><path d="M192,847 L832,847" stroke="#f59e0b" stroke-width="18"/></svg>
+      <span class="wordmark">HERO MADE <span>REAL</span></span>
+    </a>
+    <span class="pill">Founding test</span>
+  </div>
+</header>
 
-  <figure class="shot">
-    <img src="/assets/real-alpha-old-ford.jpg" width="1200" height="555" alt="A hero and a pup face a Stonehide Troll at an old river ford, in-game.">
-    <figcaption>Your hero and pup stand their ground against a Stonehide Troll at the old ford (in-game).</figcaption>
-  </figure>
-
-  <h2>The test</h2>
-  <ul>
-    <li><strong>About 30 founding testers.</strong> It's the very first version, so expect rough edges.</li>
-    <li><strong>Aimed at January 2027.</strong> We'll email you when your invite is ready.</li>
-    <li><strong>iPhone</strong> (through Apple's TestFlight) <strong>or Android</strong> (a Google Play test). Free while you test, and there will always be a free version.</li>
-    <li>You play it in your real week, then tell us what's fun, what's confusing and what breaks.</li>
-  </ul>
-
-  <h2>Who can join</h2>
-  <ul>
-    <li>You're <strong>18 or older</strong>. Why? Not because of anything mature in the game. The app's story chapters are written with AI, and those AI services and the privacy laws for younger users mean we start with adults.</li>
-    <li>You <strong>don't live in Washington or Nevada</strong> during the test, because of those states' health-data laws.</li>
-  </ul>
-
-  <form class="signup" id="signup" novalidate>
-    <div class="field">
-      <label for="email">Your email <span class="hint">(for your invite)</span></label>
-      <input id="email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="200" required>
-    </div>
-    <fieldset>
-      <legend>Your phone</legend>
-      <div class="choices">
-        <label class="choice"><input type="radio" name="device" value="iPhone" required> iPhone</label>
-        <label class="choice"><input type="radio" name="device" value="Android"> Android</label>
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <p class="kicker">Founding testers wanted</p>
+        <h1>Games are fun. Training is hard. <em>Make it one thing.</em></h1>
+        <p class="sub">Your real-life habits (training, study, focus, anything you're working on) power your hero's fight. We're gamifying real life. It's not for everyone, but it might be for you.</p>
+        <a class="btn" href="#join">Join the test</a>
+        <p class="small">iPhone or Android · aimed at January 2027 · there will always be a free version</p>
       </div>
-    </fieldset>
-    <label class="check"><input type="checkbox" name="adult" value="yes" required> <span>I'm 18 or older.</span></label>
-    <label class="check"><input type="checkbox" name="state" value="yes" required> <span>I don't live in Washington or Nevada.</span></label>
-    <div class="field" style="margin-top:14px">
-      <label for="handle">Discord name <span class="hint">(optional, so Luke knows who you are)</span></label>
-      <input id="handle" name="handle" type="text" maxlength="60" autocomplete="off">
+      <img class="hero-shot" src="img/battle-wide.jpg" width="1600" height="740" alt="In-game: a hero and a pup stand their ground against a Stonehide Troll at an old river ford.">
     </div>
-    <div class="hp" aria-hidden="true"><label>Leave empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-    <button type="submit" id="send">Count me in</button>
-    <p class="msg" id="msg" role="status" aria-live="polite"></p>
-  </form>
+  </div>
 
-  <h2>What we do with your answers</h2>
-  <p>We use your email only to send your tester invite and news about the test. We don't sell or share it, and there are no ads. Want off the list? Email <a href="mailto:real@heromadelabs.com">real@heromadelabs.com</a> and we'll delete it. More in our <a href="/real/privacy">privacy policy</a>.</p>
-  <p class="meta">Hero Made Real is an independent app by Hero Made Labs (Luke Horger). It isn't connected to or endorsed by any other organization.</p>
+  <section>
+    <div class="wrap">
+      <h2>How it works</h2>
+      <p class="lead">You live your week. Your hero lives it too.</p>
+      <div class="steps">
+        <div class="card">
+          <img src="img/battle-wide.jpg" alt="A hero and a pup face a Stonehide Troll at an old river ford." loading="lazy" style="object-position: 60% center">
+          <div><h3><span class="num">1</span>Do your habits</h3><p>The workout, the reading, the focus block. Whatever you're leveling up in real life.</p></div>
+        </div>
+        <div class="card">
+          <img src="img/story-ram.jpg" alt="A masked ram charges down a road." loading="lazy">
+          <div><h3><span class="num">2</span>Your hero fights</h3><p>Every habit you keep becomes a strike in your hero's battles.</p></div>
+        </div>
+        <div class="card">
+          <img src="img/story-road.jpg" alt="A long road through a fantasy land at dusk." loading="lazy">
+          <div><h3><span class="num">3</span>Your story grows</h3><p>Each week, the app can write you a new chapter of the story, with pictures, based on how your real week went.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <footer><a href="/">Hero Made Labs</a><a href="/real/support">Real support</a><a href="/real/privacy">Real privacy</a><a href="/real/terms">Real terms</a></footer>
+  <section>
+    <div class="wrap">
+      <h2>The founding test</h2>
+      <p class="lead">It's the very first version, so expect rough edges. You play it in your real week, then tell us what's fun, what's confusing and what breaks.</p>
+      <ul class="facts">
+        <li><b>About 30 founding testers</b><span>We'll email you when your invite is ready.</span></li>
+        <li><b>Aimed at January 2027</b><span>iPhone through Apple's TestFlight, Android through a Google Play test.</span></li>
+        <li><b>18 or older</b><span>Hero Made Real is for adults.</span></li>
+        <li><b>Not living in Washington or Nevada</b><span>During the test, because of those states' health-data laws.</span></li>
+      </ul>
+      <p class="why">Why 18+? Not because of anything mature in the game. The app's story chapters are written with AI, and those AI services and the privacy laws for younger users mean we start with adults.</p>
+    </div>
+  </section>
+
+  <section id="join">
+    <div class="wrap join">
+      <div class="jhead">
+        <h2>Count me in</h2>
+        <p class="lead" style="margin-bottom:20px">Takes 20 seconds. Free while you test, and there will always be a free version.</p>
+      </div>
+      <form class="signup" id="signup" novalidate>
+        <div class="field">
+          <label for="email">Your email <span class="hint">(for your invite)</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" inputmode="email" maxlength="200" required>
+        </div>
+        <fieldset>
+          <legend>Your phone</legend>
+          <div class="choices">
+            <label class="choice"><input type="radio" name="device" value="iPhone" required> iPhone</label>
+            <label class="choice"><input type="radio" name="device" value="Android"> Android</label>
+          </div>
+        </fieldset>
+        <label class="check"><input type="checkbox" name="adult" value="yes" required> <span>I'm 18 or older.</span></label>
+        <label class="check"><input type="checkbox" name="state" value="yes" required> <span>I don't live in Washington or Nevada.</span></label>
+        <div class="field" style="margin-top:14px">
+          <label for="handle">Discord name <span class="hint">(optional, so Luke knows who you are)</span></label>
+          <input id="handle" name="handle" type="text" maxlength="60" autocomplete="off">
+        </div>
+        <div class="hp" aria-hidden="true"><label>Leave empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <button class="btn" type="submit" id="send">Count me in</button>
+        <p class="msg" id="msg" role="status" aria-live="polite"></p>
+      </form>
+      <div class="privacy">
+          <p>We use your email only to send your tester invite and news about the test. We don't sell or share it, and there are no ads. Want off the list? Email <a href="mailto:real@heromadelabs.com">real@heromadelabs.com</a> and we'll delete it. More in our <a href="/real/privacy">privacy policy</a>.</p>
+          <p>Hero Made Real is an independent app by Hero Made Labs (Luke Horger). It isn't connected to or endorsed by any other organization.</p>
+      </div>
+    </div>
+  </section>
 </main>
+
+<footer>
+  <div class="wrap"><a href="/">Hero Made Labs</a><a href="/real/support">Real support</a><a href="/real/privacy">Real privacy</a><a href="/real/terms">Real terms</a></div>
+</footer>
+
 <script>
 (function () {
-  // Set to the Apps Script web app URL after Luke deploys it (site/drafts/real-alpha-signup-steps.md).
   var ENDPOINT = "https://script.google.com/macros/s/AKfycbxxy-YnBTpzQmFVnXXeDS74-wv6Cw_K1r2LDIna5TyP2qIZPCT2AfkMNe4zVRfI7ucT/exec";
   var form = document.getElementById("signup");
   var btn = document.getElementById("send");
@@ -98,7 +215,7 @@
     msg.className = "msg err";
     msg.textContent = text;
     if (el) el.focus();
-    msg.scrollIntoView({ block: "center", behavior: "smooth" });
+    msg.scrollIntoView({ block: "center", behavior: "instant" });
   }
 
   form.addEventListener("submit", function (e) {
@@ -132,7 +249,7 @@
           (d.already ? "You were already signed up, so no need to do it again." : "We'll email you when your invite is ready. No need to sign up again.");
         form.replaceWith(box);
         if (document.activeElement) document.activeElement.blur();
-        box.scrollIntoView({ block: "center", behavior: "smooth" });
+        box.scrollIntoView({ block: "center", behavior: "instant" });
         box.focus({ preventScroll: true });
       })
       .catch(function () {
