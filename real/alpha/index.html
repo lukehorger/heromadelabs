@@ -7,7 +7,7 @@
 <meta name="description" content="Games are fun. Training your body and mind can be hard. Hero Made Real makes your real-life habits power your hero. App testers invited: about 30 spots.">
 <meta property="og:title" content="Hero Made Real: app testers invited">
 <meta property="og:description" content="Your real-life habits power your hero's fight. iPhone or Android, aimed at January 2027.">
-<meta property="og:image" content="https://heromadelabs.com/real/alpha/img/battle-wide.jpg">
+<meta property="og:image" content="https://heromadelabs.com/real/alpha/img/hero-lift-wide.jpg">
 <meta name="theme-color" content="#020617">
 <link rel="icon" href="/assets/labs-256.png">
 <style>
@@ -89,10 +89,9 @@
   footer a { color: var(--muted); }
 
   @media (max-width: 760px) {
-    .hero { min-height: 0; display: block; background: url(img/battle-wide.jpg) 46% 0 / auto 52vh no-repeat var(--bg); }
-    .hero::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(2,6,23,.5) 0, rgba(2,6,23,0) 14vh, rgba(2,6,23,0) 34vh, var(--bg) 52vh); }
-    .hero .wrap { display: block; padding-top: 44vh; padding-bottom: 44px; }
-    .hero-shot { display: none; }
+    .hero { min-height: 0; display: block; }
+    .hero .wrap { display: flex; flex-direction: column-reverse; gap: 26px; padding-top: 76px; padding-bottom: 44px; }
+    .hero-shot { border-radius: 16px; }
     .pill { display: none; }
     .steps { grid-template-columns: 1fr; }
     .card { display: grid; grid-template-columns: 112px 1fr; gap: 14px; align-items: center; padding: 14px; }
@@ -124,7 +123,10 @@
         <a class="btn" href="#join">Join the test</a>
         <p class="small">iPhone or Android · aimed at January 2027 · there will always be a free version</p>
       </div>
-      <img class="hero-shot" src="img/battle-wide.jpg" width="1600" height="740" alt="In-game: a hero and a pup stand their ground against a Stonehide Troll at an old river ford.">
+      <picture>
+        <source media="(max-width: 760px)" srcset="img/hero-lift-tall.jpg">
+        <img class="hero-shot" src="img/hero-lift-wide.jpg" alt="A person presses a barbell in a gym at sunrise; a gold thread of light carries the lift into their hero's overhead strike, which shatters an evil Hollow.">
+      </picture>
     </div>
   </div>
 
