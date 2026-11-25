@@ -171,7 +171,7 @@
         <li><b>About 30 testers</b><span>We'll email you when your invite is ready.</span></li>
         <li><b>Aimed at January 2027</b><span>iPhone through Apple's TestFlight, Android through a Google Play test.</span></li>
         <li><b>18 or older</b><span>Hero Made Real is for adults.</span></li>
-        <li><b>Not living in Washington or Nevada</b><span>During the test, because of those states' health-data laws.</span></li>
+        <li><b>Living in the US, but not Washington or Nevada</b><span>US only for now. Washington and Nevada wait because of those states' health-data laws.</span></li>
       </ul>
       <p class="why">Why 18+? Not because of anything mature in the game. The app's story chapters are written with AI, and those AI services and the privacy laws for younger users mean we start with adults.</p>
     </div>
@@ -196,7 +196,7 @@
           </div>
         </fieldset>
         <label class="check"><input type="checkbox" name="adult" value="yes" required> <span>I'm 18 or older.</span></label>
-        <label class="check"><input type="checkbox" name="state" value="yes" required> <span>I don't live in Washington or Nevada.</span></label>
+        <label class="check"><input type="checkbox" name="state" value="yes" required> <span>I live in the US, but not in Washington or Nevada.</span></label>
         <div class="field" style="margin-top:14px">
           <label for="handle">Discord name <span class="hint">(optional, so Luke knows who you are)</span></label>
           <input id="handle" name="handle" type="text" maxlength="60" autocomplete="off">
@@ -240,7 +240,7 @@
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) return fail("Please enter a valid email.", form.email);
     if (!device) return fail("Please pick iPhone or Android.");
     if (!form.adult.checked) return fail("The test is for adults 18 and older.", form.adult);
-    if (!form.state.checked) return fail("Sorry, testers can't live in Washington or Nevada during this test.", form.state);
+    if (!form.state.checked) return fail("Sorry, for now testers need to live in the US, outside Washington and Nevada.", form.state);
 
     var body = new URLSearchParams({
       email: email, device: device.value, adult: "yes", state: "yes",
